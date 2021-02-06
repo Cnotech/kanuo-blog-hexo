@@ -20,6 +20,9 @@ xcopy /s stuff public\
 
 cmd /c "hexo g"
 
+del /f /s /q public\img
+rd /s /q public\img
+
 title Compressing(3/5)
 cd public
 "C:\Program Files\7-Zip\7z.exe" a -tzip dist.zip *
