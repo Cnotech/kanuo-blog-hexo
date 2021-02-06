@@ -52,7 +52,7 @@ git push
 title Building(2/5)
 cmd /c "yarn docs:build"
 
-::压缩`dist`文件夹为zip压缩包，没有使用默认路径安装7-Zip的请自行修改路径
+::压缩dist文件夹为zip压缩包，没有使用默认路径安装7-Zip的请自行修改路径
 title Compressing(3/5)
 cd /d ".\docs\.vuepress\dist"
 "C:\Program Files\7-Zip\7z.exe" a -tzip dist.zip *
