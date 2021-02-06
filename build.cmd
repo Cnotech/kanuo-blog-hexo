@@ -28,7 +28,6 @@ ssh root@148.70.88.72 "cd /www/admin/www.edgeless.top_80/wwwroot;rm -rf *"
 title Uploading(4/5)
 scp "dist.zip" root@148.70.88.72:/www/admin/www.edgeless.top_80/wwwroot
 title Unziping(5/5)
-ssh root@148.70.88.72 "cd /www/admin/www.edgeless.top_80/wwwroot;unzip ./dist.zip"
+ssh root@148.70.88.72 "cd /www/admin/www.edgeless.top_80/wwwroot;unzip -O CP936 ./dist.zip"
 title Finish
 timeout 5
-pause
