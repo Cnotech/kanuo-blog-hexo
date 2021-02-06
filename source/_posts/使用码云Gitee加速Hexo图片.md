@@ -52,7 +52,7 @@ $(this).attr('src', 'https://gitee.com/{码云用户名}/{hexo仓库名}/raw/mas
 $(this).attr('src', 'https://gitee.com/cnotech/kanuo-blog-hexo/raw/master/source/_posts/img/' + src);
 ```
 
-紧跟着这行代码的console.info语句中也有`'src', config.root + link + src`的字段，也可以将其替换来查看图片替换位置是否正确
+紧跟着这行代码的`console.info`函数参数中也有`config.root + link + src`的字段，也可以将其替换来查看图片替换位置是否正确
 
 ## 检查
 
