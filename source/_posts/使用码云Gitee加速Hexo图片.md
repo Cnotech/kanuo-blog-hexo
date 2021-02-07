@@ -64,4 +64,5 @@ $(this).attr('src', 'https://gitee.com/cnotech/kanuo-blog-hexo/raw/master/source
 
 ## 注意
 
-向img文件夹中增加文件时尽量避免使用中文、空格等会被URL编码的字符，如果无法避免则请将`index.js`中的src变量先进行URL编码再替换
+* 向img文件夹中增加文件时尽量避免使用中文、空格等会被URL编码的字符，如果无法避免则请将`index.js`中的src变量先进行URL编码再替换
+* 码云对自己被当成图床做出了反击，图片超过1M时需要登录才能正常看到，因此如果有超过1M的图片建议先用XnShell缩小体积然后提交
