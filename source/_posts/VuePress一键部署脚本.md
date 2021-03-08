@@ -27,7 +27,7 @@ VuePress官方提供了一键部署到Github Pages的命令，原理就是将编
 
 > 如果没有这个文件，请使用`ssh-keygen -t rsa`命令生成
 
-连接服务器，执行命令`nano ~/.ssh/authorized_keys`，复制你的`id_rsa.pub`中的所有内容，粘贴进去，按`Ctrl+X`保存并返回
+执行命令`ssh-copy-id -i ~/.ssh/id_rsa.pub username@serverip`
 
 这样以后你可以直接使用ssh或是scp命令连接到你的服务器而无需输入密码
 
