@@ -10,6 +10,7 @@ git add *.txt
 git add *.yml
 git add *.php
 git add *.html
+git add -f node_modules/hexo-asset-image/index.js
 git commit -m "%date:~0,4%%date:~5,2%%date:~8,2%_%time:~0,2%%time:~3,2%%time:~6,2%%time:~9,2%"
 git push
 
@@ -32,5 +33,3 @@ title Uploading(4/5)
 scp "dist.zip" root@192.144.230.47:/www/wwwroot/www.edgeless.top
 title Unziping(5/5)
 ssh root@192.144.230.47 "cd /www/wwwroot/www.edgeless.top;unzip -O CP936 ./dist.zip"
-title Finish
-timeout 5
