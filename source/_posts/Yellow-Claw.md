@@ -20,7 +20,7 @@ date: 2021-04-07 01:34:52
 视频：TØm-你吹的什么玩意儿
 引用：Ocho cinco-DJ Snake/Yellow Claw
 
-  <iframe src="//player.bilibili.com/player.html?aid=9840830&bvid=BV1ux411D7Zf&cid=16269404&page=1" width="780" height="480" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+https://www.bilibili.com/video/BV1ux411D7Zf?zw
 
 
 ## 正文
