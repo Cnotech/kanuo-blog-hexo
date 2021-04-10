@@ -3,7 +3,7 @@ title: EDM-Yellow-Claw
 categories:
   - EDM
 date: 2021-04-07 01:34:52
-thumbnail: https://pineapple.edgeless.top/picbed/www/edm/yellow_claw.jpg
+thumbnail: https://pineapple.edgeless.top/picbed/www/img/yellow_claw.jpg
 ---
 
 
@@ -29,7 +29,7 @@ https://www.bilibili.com/video/BV1ux411D7Zf?zw
 
 这个组合十分擅长于制造"exciting noise"，怎么嗨怎么来，主打风格涵盖Trap/Carnival/Harddance等，入门难度高，不过当你能够get到他们制造的噪声中的high点时也会跟着OHHHHHHHHH起来
 
-![](https://pineapple.edgeless.top/picbed/www/edm/barong.jpg)
+![](./edm/barong.jpg)
 
 对黄爪风格的发扬作品可以在Barong Family厂牌找到，这个厂牌也正是由黄爪创建，厂牌更像是一个家庭俱乐部而非商业厂牌（因为这种风格的EDM作品实在很难被大众接受），签约的作者发的作品也都是些质量上乘的"exciting noise"
 
