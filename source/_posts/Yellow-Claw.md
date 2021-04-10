@@ -85,13 +85,13 @@ RayRay来自中国台湾，和Juyen Sebulba一样也是Barong Family签约制作
 
 **简评：** Do You Like Bass? 3.0，黄爪和Juyen Sebulba合作宁就放心吧。
 
-Bassgod同时也是专辑《The Holy Bassgod EP》的主打，可以去听一下专辑里面的其他三首，质量也是上乘的
+Bassgod同时也是专辑《The Holy Bassgod EP》的主打，可以去听一下专辑里面的其他三首，质量也是上乘的。
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1809641407&auto=0&height=66"></iframe>
 
 #### Don't Stop - Yellow Claw/Valentino Khan
 **风格：** Trap / Carnival / Psystyle
 
-**简评：** 可汗大叔与黄爪的梦幻联动！后半段的Psystyle真的很上头（虽然Khan在这首中的存在感很低，可能只是参与了编曲）
+**简评：** 可汗大叔与黄爪的梦幻联动！后半段的Psystyle真的很上头（虽然Khan在这首中的存在感很低，可能只是参与了编曲？）
 
 这首所属的专辑《Amsterdam Trap Music, Vol. 3》的其他作品也非常经典，推荐进修。
 
@@ -126,5 +126,5 @@ Bassgod同时也是专辑《The Holy Bassgod EP》的主打，可以去听一下
 #### End Like This (Arknights Soundtrack) - Steve Aoki/Yellow Claw/Runn
 **风格：** Electro House
 
-**简评：** 明日方舟的商单，黄爪再次与潮爷（的枪手）联手出曲，质量一般般奈何旋律抓耳，可以试试
+**简评：** 明日方舟的商单，黄爪再次与潮爷（的枪手）联手出曲，质量一般般奈何旋律抓耳，可以试试。
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1807756571&auto=0&height=66"></iframe>
