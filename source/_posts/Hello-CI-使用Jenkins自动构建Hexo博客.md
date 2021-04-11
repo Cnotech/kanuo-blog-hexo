@@ -20,16 +20,10 @@ thumbnail: https://pineapple.edgeless.top/picbed/www/img/jenkins.jpg
 安装完成后执行以下命令启动Jenkins
 ```
 systemctl start jenkins
-
-//如果你正在使用缺失systemctl 的 WSL 
-service jenkins start
 ```
 用以下命令查看Jenkins运行状态
 ```
 systemctl status jenkins
-
-//如果你正在使用缺失systemctl 的 WSL 
-service jenkins status
 ```
 ![](img/121745.jpg)
 

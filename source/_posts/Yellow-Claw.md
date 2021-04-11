@@ -129,3 +129,10 @@ Bassgod同时也是专辑《The Holy Bassgod EP》的主打，可以去听一下
 
 **简评：** 明日方舟的商单，黄爪再次与潮爷（的枪手）联手出曲，质量一般般奈何旋律抓耳，可以试试。
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1807756571&auto=0&height=66"></iframe>
+
+#### DRXGS - Yellow Claw/Sara Fajira
+**风格：** Reggaeton
+
+**简评：** 黄爪猝不及防的新单，也算是尝试了新的风格
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1832041535&auto=0&height=66"></iframe>
