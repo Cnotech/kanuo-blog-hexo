@@ -105,6 +105,8 @@ service jenkins status
 
 第二栏为源码管理，我的源码仓库是公开的所以直接用了https协议，如果为私有仓库请自行添加证书
 
+![](img/125018.jpg)
+
 第三栏构建触发器中勾选`Gitee webhook 触发构建`，可选WebHook 密码
 
 ![](img/125613.jpg)
