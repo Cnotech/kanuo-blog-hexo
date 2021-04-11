@@ -4,6 +4,7 @@ categories:
   - Jenkins
   - Hexo
 date: 2021-04-11 12:04:06
+thumbnail: https://pineapple.edgeless.top/picbed/www/img/jenkins.jpg
 ---
 
 ## 前言
