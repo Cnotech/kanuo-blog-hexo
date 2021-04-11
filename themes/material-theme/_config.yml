@@ -300,7 +300,7 @@ search:
 #     baidu | google | cnzz
 analytics:
     google_site_id:
-    baidu_site_id:
+    baidu_site_id: f0bc5db3cebaa3dece8258828b9d47b5
     cnzz_site_id:
 
 # Leancloud Views
