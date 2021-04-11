@@ -4,6 +4,7 @@ categories:
   - VuePress
 date: 2021-02-06 16:44:21
 ---
+<script type="text/javascript" src="/js/push.js"></script>
 
 ## 前言
 

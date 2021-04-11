@@ -5,6 +5,7 @@ categories:
 date: 2021-04-07 01:34:52
 thumbnail: https://pineapple.edgeless.top/picbed/www/img/yellow_claw.jpg
 ---
+<script type="text/javascript" src="/js/push.js"></script>
 
 
 ## 艺术家信息

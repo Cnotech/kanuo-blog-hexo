@@ -4,6 +4,7 @@ date: {{ date }}
 categories:
 - EDM
 ---
+<script type="text/javascript" src="/js/push.js"></script>
 
 
 ## 艺术家信息

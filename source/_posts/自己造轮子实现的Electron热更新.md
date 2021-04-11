@@ -4,6 +4,7 @@ categories:
   - Electron
 date: 2021-03-01 22:04:19
 ---
+<script type="text/javascript" src="/js/push.js"></script>
 ## 前言
 Edgeless Hub在主体功能实现后就需要开始考虑一些用户体验方面的内容了。众所周知Electron使用Chromium作为用户界面渲染器，而Chromium的体积却是有目共睹的巨大，每次有小的更新就直接重新下载一次Chromium也不是很现实，因此在生产时实现热更新还是有必要的。
 

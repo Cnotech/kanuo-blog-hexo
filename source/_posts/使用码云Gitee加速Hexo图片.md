@@ -4,6 +4,7 @@ categories:
   - Hexo
 date: 2021-02-06 16:06:50
 ---
+<script type="text/javascript" src="/js/push.js"></script>
 
 > 2021-02-23更新：Gitee终于开防盗链了，薅羊毛失败，Wiki的图片已经全面迁移至菠萝云，此贴仅做参考
 

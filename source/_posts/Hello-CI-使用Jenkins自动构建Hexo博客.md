@@ -6,6 +6,7 @@ categories:
 date: 2021-04-11 12:04:06
 thumbnail: https://pineapple.edgeless.top/picbed/www/img/jenkins.jpg
 ---
+<script type="text/javascript" src="/js/push.js"></script>
 
 ## 前言
 折腾了下Jenkins做了一个Hello World项目，可以实现Hexo博客的自动构建、部署，顺带做了图片自动上传图床的功能（使用[Rclone](https://rclone.org)，此篇不展开讲解）
