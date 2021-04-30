@@ -70,12 +70,12 @@ background:
 
 # Images Settings
 img:
-    logo: "https://gitee.com/cnotech/kanuo-blog-hexo/raw/master/source/_posts/img/site/el.png"
-    avatar: "https://gitee.com/cnotech/kanuo-blog-hexo/raw/master/source/_posts/img/site/j3rry.jpg"
-    daily_pic: "https://gitee.com/cnotech/kanuo-blog-hexo/raw/master/source/_posts/img/site/welcome.jpg"
-    sidebar_header: "https://gitee.com/cnotech/kanuo-blog-hexo/raw/master/source/_posts/img/site/sidebar_header.png"
-    random_thumbnail: "https://gitee.com/cnotech/kanuo-blog-hexo/raw/master/source/_posts/img/site/random/material-"
-    footer_image: "https://gitee.com/cnotech/kanuo-blog-hexo/raw/master/source/_posts/img/site/sidebar_header.png"
+    logo: "https://pineapple.edgeless.top/picbed/www/img/site/el.png"
+    avatar: "https://pineapple.edgeless.top/picbed/www/img/site/j3rry.jpg"
+    daily_pic: "https://pineapple.edgeless.top/picbed/www/img/site/welcome.jpg"
+    sidebar_header: "https://pineapple.edgeless.top/picbed/www/img/site/sidebar_header.png"
+    random_thumbnail: "https://pineapple.edgeless.top/picbed/www/img/site/random/material-"
+    footer_image: "https://pineapple.edgeless.top/picbed/www/img/site/sidebar_header.png"
         # edgeless:
         #     link: "https://home.edgeless.top/"
         #     src: "https://home.edgeless.top/favicon.ico"
