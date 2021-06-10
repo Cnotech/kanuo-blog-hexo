@@ -4,6 +4,7 @@ categories:
   - Electron
 date: 2021-03-01 22:04:19
 ---
+<script type="text/javascript" src="/js/push.js"></script>
 ## 前言
 Edgeless Hub在主体功能实现后就需要开始考虑一些用户体验方面的内容了。众所周知Electron使用Chromium作为用户界面渲染器，而Chromium的体积却是有目共睹的巨大，每次有小的更新就直接重新下载一次Chromium也不是很现实，因此在生产时实现热更新还是有必要的。
 
@@ -35,7 +36,7 @@ Electron官方确实也考虑到了热更新的问题，因此提供了官方的
 所以看下来，官方建议的使用Squirrel框架和autoUpdater模块实现的热更新我都因为服务端的问题放弃了，当然还有一些别的原因使得我即使能够成功安装服务端也不得不放弃使用，比如只支持electron-builder生成的安装版热更新而不支持绿色版
 
 ## 思路
-基本的想法就是大体的Chromium主要程序不动，将被更改的渲染进场和主进程内容替换。查阅后发现确实有这么做的（还是在生产环境中），将使用asar打包生成的`app.asar`直接替换即可，也就是只涉及到resources目录内文件的替换。
+基本的想法就是大体的Chromium主要程序不动，将被更改的渲染进程和主进程内容替换。查阅后发现确实有这么做的（还是在生产环境中），将使用asar打包生成的`app.asar`直接替换即可，也就是只涉及到resources目录内文件的替换。
 
 ![](img/224059.jpg)
 
@@ -468,6 +469,8 @@ set /p getValue_=<val
 del /f /q tmp
 del /f /q val
 ```
+
+> 注：可以在[Edgeless Hub的公开仓库](https://gitee.com/cnotech/edgeless-hub/tree/master/release)下载到`typex.exe`和`jj.exe`
 
 ```
 ::writeJson.cmd
