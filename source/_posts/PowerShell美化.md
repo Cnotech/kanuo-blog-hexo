@@ -87,7 +87,7 @@ Set-PoshPrompt -Theme agnosterplus # 设置主题为agnosterplus
 可以看到Oh My Posh的配置已经生效了，但是会有乱码的情况出现。乱码是因为当前Windows Terminal使用的字体不是Nerd Fonts字体（见[官方文档](https://ohmyposh.dev/docs/fonts#nerd-fonts)），因此我们需要下载一份Nerd Fonts字体并配置为Windows Terminal使用的字体
 
 ## 使用Nerd Fonts字体
->参考：https://ohmyposh.dev/docs/fonts
+>参考：[Oh My Posh Docs](https://ohmyposh.dev/docs/fonts)
 
 访问[Nerd Fonts下载页面](https://www.nerdfonts.com/font-downloads)，选择任意一种字体下载。这里下载名为Caskaydia Cove Nerd Font的字体
 
@@ -118,7 +118,7 @@ Set-PoshPrompt -Theme agnosterplus # 设置主题为agnosterplus
 ![](img/113620.jpg)
 ### 隐藏不想要的终端
 ![](img/113827.jpg)
->注：这里应该是官方翻译问题，应该翻译为“从下拉菜单中隐藏此配置（Profile）”
+>注：这里存在翻译问题，应该翻译为“从下拉菜单中隐藏此配置（Profile）”
 ### 配置VSCode终端及字体
 ![](img/121654.jpg)
 配置字体前需要查看你下载的Nerd Fonts字体安装之后显示的名称
