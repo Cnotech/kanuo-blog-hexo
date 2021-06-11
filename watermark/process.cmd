@@ -34,3 +34,5 @@ for /f  "usebackq" %%a in (tmp.txt) do (
     set "str=%%a"
     if not exist %OUTPUT_PATH%\%%a cmd /v /c magick composite -dissolve 20% -gravity southeast logo.png !INPUT_PATH!\!str! !OUTPUT_PATH!\!str!
 )
+
+del /f /q tmp.txt
