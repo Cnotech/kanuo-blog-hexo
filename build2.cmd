@@ -1,4 +1,8 @@
 @echo off
+title Watermarking
+cd watermark
+call process.cmd
+cd ..
 
 title Updating
 git add *.md

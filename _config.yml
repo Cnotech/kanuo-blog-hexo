@@ -104,3 +104,8 @@ theme: material-theme
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+watermark:
+    enable: false
+    imageEnable: false
+    gravity: southeast
