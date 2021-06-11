@@ -120,7 +120,8 @@ Set-PoshPrompt -Theme agnosterplus # 设置主题为agnosterplus
 ![](img/113827.jpg)
 >注：这里应该是官方翻译问题，应该翻译为“从下拉菜单中隐藏此配置（Profile）”
 ### 配置VSCode终端及字体
-首先需要查看你下载的Nerd Fonts字体安装之后显示的名称
+![](img/121654.jpg)
+配置字体前需要查看你下载的Nerd Fonts字体安装之后显示的名称
 ![](img/115642.jpg)
 
 点击“文件-首选项-设置”，搜索“字体”，跳转到“功能-终端”，在“Terminal>Integrated:Font Family”中填写`CaskaydiaCove NF`
