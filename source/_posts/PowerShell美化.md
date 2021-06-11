@@ -119,3 +119,16 @@ Set-PoshPrompt -Theme agnosterplus # 设置主题为agnosterplus
 ### 隐藏不想要的终端
 ![](img/113827.jpg)
 >注：这里应该是官方翻译问题，应该翻译为“从下拉菜单中隐藏此配置（Profile）”
+### 配置VSCode终端及字体
+首先需要查看你下载的Nerd Fonts字体安装之后显示的名称
+![](img/115642.jpg)
+
+点击“文件-首选项-设置”，搜索“字体”，跳转到“功能-终端”，在“Terminal>Integrated:Font Family”中填写`CaskaydiaCove NF`
+![](img/115155.jpg)
+### 配置IntelliJ IDEA based IDE终端及字体
+IDEA好像不支持自定义字体，随便选一个后缀带“NF”的字体即可
+
+不过这个渲染出来的效果好像不是很好，我滚回cmd了
+![](img/120314.jpg)
+![](img/120549.jpg)
+![](img/120823.jpg)
