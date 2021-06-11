@@ -27,6 +27,8 @@ if not exist logo.png (
     exit
 )
 
+dir /b /A:-D %INPUT_PATH% %ALLOWED_EXT%>tmp.txt
+
 ::处理现有图片
 for /f  "usebackq" %%a in (tmp.txt) do (
     set "str=%%a"

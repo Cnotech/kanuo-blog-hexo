@@ -5,6 +5,7 @@ call process.cmd
 cd ..
 
 title Updating
+git add watermark
 git add *.md
 git add *.cmd
 git add *.js
