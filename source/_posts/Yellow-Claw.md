@@ -90,7 +90,7 @@ Bassgod同时也是专辑《The Holy Bassgod EP》的主打，可以去听一下
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1809641407&auto=0&height=66"></iframe>
 
 #### Don't Stop - Yellow Claw/Valentino Khan
-**风格：** Trap / Carnival / Psystyle
+**风格：**  Carnival / Trap /Psystyle
 
 **简评：** 可汗大叔与黄爪的梦幻联动！后半段的Psystyle真的很上头（虽然Khan在这首中的存在感很低，可能只是参与了编曲？）
 
