@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edgeless-Http Panic</title>
+    <link rel="shortcut icon" href="https://home.edgeless.top/favicon.ico" />
+  </head>
+  <body>
+    <div id="page">
+      <div id="container">
+        <h1>:&nbsp;(</h1>
+        <h2>你的网页遇到问题，需要重新启动。</h2>
+        <h2>我们只收集某些错误信息，然后为你重新启动。</h2>
+        <h2>完成 <span id="percentage">0</span>%</h2>
+        <div id="details">
+          <div id="qr">
+            <div id="image">
+              <img
+                src="/img/qrcode.png"
+                alt="QR Code"
+                width="200"
+                height="200"
+              />
+            </div>
+          </div>
+          <div id="stopcode">
+            <h5 style="font-size: 16px">
+              <br />有关此问题的详细信息和可能的解决方法，请联系Edgeless工作人员
+            </h5>
+            <h5 style="font-size: 16px">
+              如果联系工作人员，请向他们提供以下信息：
+              <br />
+              <p id="codeblock">终止代码：HTTP_STATUS_403</p>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function GetQueryValue(queryName) {
+        var reg = new RegExp("(^|&)" + queryName + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+          return decodeURI(r[2]);
+        } else {
+          return null;
+        }
+      }
+      document.getElementById("codeblock").innerText =
+        "终止代码：HTTP_STATUS_" +
+        (GetQueryValue("code") != null ? GetQueryValue("code") : "403");
+
+      var percentageElement = document.getElementById("percentage");
+      var percentage = 0;
+
+      function process() {
+        percentage += parseInt(Math.random() * 10);
+        if (percentage > 100) {
+          percentage = 100;
+          document.location = "/";
+        }
+        percentageElement.innerText = percentage;
+        processInterval();
+      }
+
+      function processInterval() {
+        setTimeout(process, Math.random() * (1000 - 500) + 500);
+      }
+      processInterval();
+    </script>
+  </body>
+</html>
+
+<style>
+  body {
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  }
+  #page {
+    display: table;
+  }
+  body {
+    background: #106faa;
+  }
+  body {
+    color: #fefeff;
+  }
+  #page {
+    height: 100%;
+  }
+  body {
+    height: 100vh;
+  }
+  h3,
+  h2,
+  body,
+  h1 {
+    margin-left: 0;
+  }
+  body,
+  #page {
+    margin-bottom: 0;
+  }
+  #page {
+    margin-left: auto;
+  }
+  h1,
+  h3,
+  h2,
+  body {
+    margin-right: 0;
+  }
+  body {
+    margin-top: 0;
+  }
+  h1 {
+    font-weight: normal;
+  }
+  h1 {
+    font-weight: 300;
+  }
+  h2,
+  h3,
+  h1,
+  h4 {
+    padding-left: 0;
+  }
+  #page {
+    margin-right: auto;
+  }
+  #page {
+    margin-top: -0.625pc;
+  }
+  #page {
+    width: 70%;
+  }
+  h3,
+  h2,
+  h4,
+  h1 {
+    padding-bottom: 0;
+  }
+  h4,
+  h2,
+  h1,
+  h3 {
+    padding-right: 0;
+  }
+  h4,
+  h3,
+  h2,
+  h1 {
+    padding-top: 0;
+  }
+  h1,
+  h4,
+  h3,
+  h2 {
+    margin-bottom: 18.75pt;
+  }
+  #page {
+    font-size: 1.9vw;
+  }
+  #container {
+    display: table-cell;
+  }
+  #container {
+    vertical-align: middle;
+  }
+  h2,
+  h5,
+  h3,
+  h1,
+  h4 {
+    margin-top: 0;
+  }
+  h2 {
+    font-weight: normal;
+  }
+  #details {
+    display: flex;
+  }
+  h2 {
+    font-weight: 300;
+  }
+  #details {
+    flex-flow: row;
+  }
+  h3 {
+    font-weight: normal;
+  }
+  h3 {
+    font-weight: 300;
+  }
+  #details {
+    flex-wrap: nowrap;
+  }
+  #image img {
+    width: 4em;
+  }
+  h4 {
+    font-weight: normal;
+  }
+  #details {
+    padding-top: 0.104166667in;
+  }
+  h4 {
+    font-weight: 300;
+  }
+  #image img {
+    height: 4em;
+  }
+  h4,
+  h5 {
+    margin-left: 0;
+  }
+  #qr {
+    flex: 0 1 auto;
+  }
+  h4,
+  h5 {
+    margin-right: 0;
+  }
+  h5 {
+    font-weight: normal;
+  }
+  h5 {
+    font-weight: 300;
+  }
+  #image {
+    background: white;
+  }
+  h5 {
+    padding-left: 0;
+  }
+  h5 {
+    padding-bottom: 0;
+  }
+  h5 {
+    padding-right: 0;
+  }
+  h5 {
+    padding-top: 0;
+  }
+  #image {
+    padding-left: 0.052083333in;
+  }
+  h5 {
+    margin-bottom: 18.75pt;
+  }
+  h1 {
+    font-size: 6.5em;
+  }
+  h1 {
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  h4 {
+    font-size: 1.4em;
+  }
+  h4 {
+    line-height: 1.5em;
+  }
+  h5 {
+    line-height: 1.1em;
+  }
+  #image {
+    padding-bottom: 0.052083333in;
+  }
+  h5 {
+    font-size: 1.3em;
+  }
+  #image {
+    padding-right: 0.052083333in;
+  }
+  #image {
+    padding-top: 0.052083333in;
+  }
+  #image {
+    line-height: 0;
+  }
+  #stopcode {
+    padding-left: 10px;
+  }
+  #stopcode {
+    flex: 1 1 auto;
+  }
+  @media (min-width: 840px) {
+    #page {
+      font-size: 140%;
+    }
+    #page {
+      width: 50pc;
+    }
+  }
+</style>
