@@ -129,6 +129,6 @@ Set-PoshPrompt -Theme agnosterplus # 设置主题为agnosterplus
 点击“文件-首选项-设置”，搜索“字体”，跳转到“功能-终端”，在“Terminal>Integrated:Font Family”中填写`CaskaydiaCove NF`
 ![](img/115155.jpg)
 ### 配置IntelliJ IDEA based IDE终端及字体
-在设置中导航到 “编辑器-配色方案-控制台字体”，然后取消勾选“仅显示等宽字体”，选择下载的 NF 字体即可
 ![](img/120314.jpg)
+在设置中导航到 “编辑器-配色方案-控制台字体”，勾选“使用控制台字体，而不是...”，然后取消勾选“仅显示等宽字体”，选择下载的 NF 字体即可
 ![](img/120549.jpg)
