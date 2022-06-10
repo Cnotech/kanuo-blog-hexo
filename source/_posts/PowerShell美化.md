@@ -42,21 +42,13 @@ Windows 10自带的PowerShell版本为PowerShell 5，而微软默认PowerShell 7
 ## 安装Oh My Posh
 > 参考：[Oh My Posh Docs](https://ohmyposh.dev/docs/pwsh)
 
-打开Windows Terminal，切换到PowerShell 7终端（也有可能已经被默认配置为PowerShell 7，注意版本号）
+官网提供了 4 种安装方式：微软商店下载、winget、scoop、PowerShell 脚本。由于我本地有 scoop 因此我直接使用了 scoop 进行安装。对你来说，微软商店下载或 PowerShell 脚本应该是最佳的方式。
 
-![](img/180114.jpg)
-
-执行以下命令安装Oh My Posh：
-
-```powershell
-Install-Module oh-my-posh -Scope CurrentUser
-```
-
-输入`y`并回车确认（从不被信任的仓库安装）
-
-![](img/180446.jpg)
+[点击此处](https://ohmyposh.dev/docs/installation/windows#install)查看安装方式。
 
 ## 配置Oh My Posh
+打开Windows Terminal，切换到PowerShell 7终端（也有可能已经被默认配置为PowerShell 7，注意版本号）。
+
 执行以下命令使用记事本配置PowerShell启动脚本：
 
 ```powershell
@@ -67,18 +59,15 @@ notepad $Profile
 
 ![](img/180950.jpg)
 
-输入以下内容然后保存：
+此处输入的内容根据安装方式会有所不同，具体内容[点击此处](https://ohmyposh.dev/docs/installation/windows#default-themes)查看。对于使用 scoop 安装的方式来说，输入以下内容然后保存：
 
 ```powershell
-Import-Module oh-my-posh # 引入Oh My Posh模块
-Set-PoshPrompt -Theme agnosterplus # 设置主题为agnosterplus
+oh-my-posh init pwsh --config "$(scoop prefix oh-my-posh)\themes\atomic.omp.json"
 ```
 
->注：此步骤中设置主题的命令可能会变化，请留意[官方文档](https://ohmyposh.dev/docs/pwsh/#replace-your-existing-prompt)
+>注：此步骤中设置主题的命令可能会变化，最好不要直接照搬，请从官方文档复制
 
->更多主题样式请执行命令`Get-PoshThemes`或访问[官方主题](https://ohmyposh.dev/docs/themes)
-
-![](img/181325.jpg)
+>此处将默认主题设置为 `atomic`，更多主题样式请执行命令`Get-PoshThemes`或访问[官方主题](https://ohmyposh.dev/docs/themes)
 
 新建一个PowerShell 7终端查看效果
 
