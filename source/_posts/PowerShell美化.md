@@ -55,7 +55,7 @@ Windows 10自带的PowerShell版本为PowerShell 5，而微软默认PowerShell 7
 notepad $Profile
 ```
 
-如果提示不存在则点击“是”创建
+如果提示不存在则点击“是”创建；如果无法自动创建请执行 `echo $Profile` 并安装给出的目录手动创建文件夹和文件。
 
 ![](img/180950.jpg)
 
@@ -68,6 +68,12 @@ oh-my-posh init pwsh --config "$(scoop prefix oh-my-posh)\themes\atomic.omp.json
 >注：此步骤中设置主题的命令可能会变化，最好不要直接照搬，请从官方文档复制
 
 >此处将默认主题设置为 `atomic`，更多主题样式请执行命令`Get-PoshThemes`或访问[官方主题](https://ohmyposh.dev/docs/themes)
+
+在 Windows 11 上可能上述命令执行之后没有效果，在上述命令的末尾增加 ` | Invoke-Expression`即可，即使用如下命令：
+
+```powershell
+oh-my-posh init pwsh --config "$(scoop prefix oh-my-posh)\themes\atomic.omp.json" | Invoke-Expression
+```
 
 新建一个PowerShell 7终端查看效果
 
