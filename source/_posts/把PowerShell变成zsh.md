@@ -60,7 +60,7 @@ z 命令可以通过路径关键词快速跳转到曾经导航过的目录。例
 1. **以管理员身份启动** PowerShell，执行 `Install-Module syntax-highlighting`；
 2. 使用 `notepad $profile` 打开 PowerShell 配置文件，添加 `Import-Module syntax-highlighting`。
 
-##（AD）rsproxy
+## （AD）rsproxy
 [RsProxy](https://rsproxy.cn/) 是字节跳动基础架构团队搭建的公共 rustup & crates.io 镜像，能够有效解决部分地区访问 Rust 镜像源速度慢的问题：
 1. 使用 `notepad $profile` 打开 PowerShell 配置文件，添加以下命令：
   ```powershell
