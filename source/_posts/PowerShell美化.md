@@ -62,7 +62,7 @@ notepad $Profile
 此处输入的内容根据安装方式会有所不同，具体内容[点击此处](https://ohmyposh.dev/docs/installation/windows#default-themes)查看。对于使用 scoop 安装的方式来说，输入以下内容然后保存：
 
 ```powershell
-oh-my-posh init pwsh --config "$(scoop prefix oh-my-posh)\themes\atomic.omp.json"
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/atomic.omp.json"
 ```
 
 >注：此步骤中设置主题的命令可能会变化，最好不要直接照搬，请从官方文档复制
@@ -72,7 +72,7 @@ oh-my-posh init pwsh --config "$(scoop prefix oh-my-posh)\themes\atomic.omp.json
 在 Windows 11 上可能上述命令执行之后没有效果，在上述命令的末尾增加 ` | Invoke-Expression`即可，即使用如下命令：
 
 ```powershell
-oh-my-posh init pwsh --config "$(scoop prefix oh-my-posh)\themes\atomic.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/atomic.omp.json" | Invoke-Expression
 ```
 
 新建一个PowerShell 7终端查看效果
