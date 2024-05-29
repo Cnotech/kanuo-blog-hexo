@@ -63,7 +63,7 @@ thumbnail:
 #        type available value: A (animal), C (culture), N (nature), S (space), T (travel)
 background:
     #purecolor: "#F5F5F5"
-    bgimg: "https://www.edgeless.top/bing.php"
+    bgimg: "https://home.edgeless.top/img/picbed/wp.jpg"
     bing:
         enable: false
         parameter:
