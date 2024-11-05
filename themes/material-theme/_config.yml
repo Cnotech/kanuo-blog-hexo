@@ -63,19 +63,19 @@ thumbnail:
 #        type available value: A (animal), C (culture), N (nature), S (space), T (travel)
 background:
     #purecolor: "#F5F5F5"
-    bgimg: "https://home.edgeless.top/img/picbed/wp.jpg"
+    bgimg: "https://s.edgeless.top/bing.php"
     bing:
         enable: false
         parameter:
 
 # Images Settings
 img:
-    logo: "https://pineapple.edgeless.top/picbed/www/img/site/el.png"
-    avatar: "https://pineapple.edgeless.top/picbed/www/img/site/j3rry.jpg"
-    daily_pic: "https://pineapple.edgeless.top/picbed/www/img/site/welcome.jpg"
-    sidebar_header: "https://pineapple.edgeless.top/picbed/www/img/site/sidebar_header.png"
-    random_thumbnail: "https://pineapple.edgeless.top/picbed/www/img/site/random/material-"
-    footer_image: "https://pineapple.edgeless.top/picbed/www/img/site/sidebar_header.png"
+    logo: "https://cloud.edgeless.top/picbed/www/img/site/el.png"
+    avatar: "https://cloud.edgeless.top/picbed/www/img/site/j3rry.jpg"
+    daily_pic: "https://cloud.edgeless.top/picbed/www/img/site/welcome.jpg"
+    sidebar_header: "https://cloud.edgeless.top/picbed/www/img/site/sidebar_header.png"
+    random_thumbnail: "https://cloud.edgeless.top/picbed/www/img/site/random/material-"
+    footer_image: "https://cloud.edgeless.top/picbed/www/img/site/sidebar_header.png"
         # edgeless:
         #     link: "https://home.edgeless.top/"
         #     src: "https://home.edgeless.top/favicon.ico"

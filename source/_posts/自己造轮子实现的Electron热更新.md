@@ -4,45 +4,57 @@ categories:
   - Electron
 date: 2021-03-01 22:04:19
 ---
+
 <script type="text/javascript" src="/js/push.js"></script>
+
 ## 前言
-Edgeless Hub在主体功能实现后就需要开始考虑一些用户体验方面的内容了。众所周知Electron使用Chromium作为用户界面渲染器，而Chromium的体积却是有目共睹的巨大，每次有小的更新就直接重新下载一次Chromium也不是很现实，因此在生产时实现热更新还是有必要的。
+
+Edgeless Hub 在主体功能实现后就需要开始考虑一些用户体验方面的内容了。众所周知 Electron 使用 Chromium 作为用户界面渲染器，而 Chromium 的体积却是有目共睹的巨大，每次有小的更新就直接重新下载一次 Chromium 也不是很现实，因此在生产时实现热更新还是有必要的。
 
 2022-05-19 更新：最近开了一个 electron 新坑，然后发现这篇文章的内容并不是最佳实践；后面实现之后看有没有空把新版的热更新记录下来（可能会当懒狗懒得写）
 
 ## Why not... ?
-Electron官方确实也考虑到了热更新的问题，因此提供了官方的轮子可供使用：[官方文档](https://www.electronjs.org/docs/tutorial/updates)
 
-官方支持的方法是利用内置的Squirrel框架和Electron的autoUpdater模块，服务端有以下选择：
+Electron 官方确实也考虑到了热更新的问题，因此提供了官方的轮子可供使用：[官方文档](https://www.electronjs.org/docs/tutorial/updates)
 
-### Electron官方维护的开源网络服务[update.electronjs.org](https://github.com/electron/update.electronjs.org)
+官方支持的方法是利用内置的 Squirrel 框架和 Electron 的 autoUpdater 模块，服务端有以下选择：
 
-使用此服务非常依赖于Github，你需要满足以下条件：
+### Electron 官方维护的开源网络服务[update.electronjs.org](https://github.com/electron/update.electronjs.org)
+
+使用此服务非常依赖于 Github，你需要满足以下条件：
 
 1. 应用运行在 macOS 或者 Windows
 2. 应用有公开的 GitHub 仓库
 3. 编译的版本发布在 GitHub Releases
 4. 编译的版本已代码签名
 
-虽然Edgeless Hub的代码是public的，但是并没有托管在Github上，而且GitHub Releases对于境内用户来说速度并不是那么友好，因此我直接放弃了使用此服务
+虽然 Edgeless Hub 的代码是 public 的，但是并没有托管在 Github 上，而且 GitHub Releases 对于境内用户来说速度并不是那么友好，因此我直接放弃了使用此服务
 
 ### 自建服务端
-有多个现成的服务端轮子可供使用：
-#### Hazel/Nuts
-需要依赖GitHub Releases，同理放弃
-#### electron-release-server
-这个是我最中意的一个服务端，但是仓库没有提供二进制版本，Docker版本很旧未更新，而我在本地编译一直报错，排除所有应用未安装的报错后最后的报错出现在程序源代码中，那就只好放弃了，886
-#### Nucleus
-在yarn安装依赖时报错，也懒得排查了，直接拜拜
 
-所以看下来，官方建议的使用Squirrel框架和autoUpdater模块实现的热更新我都因为服务端的问题放弃了，当然还有一些别的原因使得我即使能够成功安装服务端也不得不放弃使用，比如只支持electron-builder生成的安装版热更新而不支持绿色版
+有多个现成的服务端轮子可供使用：
+
+#### Hazel/Nuts
+
+需要依赖 GitHub Releases，同理放弃
+
+#### electron-release-server
+
+这个是我最中意的一个服务端，但是仓库没有提供二进制版本，Docker 版本很旧未更新，而我在本地编译一直报错，排除所有应用未安装的报错后最后的报错出现在程序源代码中，那就只好放弃了，886
+
+#### Nucleus
+
+在 yarn 安装依赖时报错，也懒得排查了，直接拜拜
+
+所以看下来，官方建议的使用 Squirrel 框架和 autoUpdater 模块实现的热更新我都因为服务端的问题放弃了，当然还有一些别的原因使得我即使能够成功安装服务端也不得不放弃使用，比如只支持 electron-builder 生成的安装版热更新而不支持绿色版
 
 ## 思路
-基本的想法就是大体的Chromium主要程序不动，将被更改的渲染进程和主进程内容替换。查阅后发现确实有这么做的（还是在生产环境中），将使用asar打包生成的`app.asar`直接替换即可，也就是只涉及到resources目录内文件的替换。
+
+基本的想法就是大体的 Chromium 主要程序不动，将被更改的渲染进程和主进程内容替换。查阅后发现确实有这么做的（还是在生产环境中），将使用 asar 打包生成的`app.asar`直接替换即可，也就是只涉及到 resources 目录内文件的替换。
 
 ![](img/224059.jpg)
 
-看了看我本地生成的resources目录，里面的`elevate.exe`修改时间为2019年，应该就是不需要变动的二进制文件。然后`app.asar.unpacked`文件夹里面包含了一个`node_modules`文件夹，里面是没有被webpack打包的node模块依赖，也是不需要变动的。
+看了看我本地生成的 resources 目录，里面的`elevate.exe`修改时间为 2019 年，应该就是不需要变动的二进制文件。然后`app.asar.unpacked`文件夹里面包含了一个`node_modules`文件夹，里面是没有被 webpack 打包的 node 模块依赖，也是不需要变动的。
 
 在执行此方案之前有一个担心的点，就是仅替换`app.asar`之后我通过`app.getVersion()`获得的程序版本号会不会变，因为查看主程序时发现主程序的详细信息是带了版本号的
 
@@ -50,35 +62,36 @@ Electron官方确实也考虑到了热更新的问题，因此提供了官方的
 
 不过尝试之后发现好像并没有问题，`app.getVersion()`获得的程序版本号会变成最新的，不过这里也暴露了这种方案的一个缺点——主程序的版本号没法实现同步更新（除非你实现自动化反编译）
 
-此外Edgeless Hub会使用一些外部依赖二进制文件，也需要考虑新版本更新了这个文件夹内的依赖的情况，就是这个`core`文件夹内的文件
+此外 Edgeless Hub 会使用一些外部依赖二进制文件，也需要考虑新版本更新了这个文件夹内的依赖的情况，就是这个`core`文件夹内的文件
 
 ![](img/225431.jpg)
 
-热更新还需要一个更新进程（VSCode更新时左上角一闪而过的小框就是一个更新进程），因为`app.asar`在Electron运行时是处于被占用状态的，需要一个更新进程在主程序结束的时候替换文件，最简单的就是直接用cmd脚本实现
+热更新还需要一个更新进程（VSCode 更新时左上角一闪而过的小框就是一个更新进程），因为`app.asar`在 Electron 运行时是处于被占用状态的，需要一个更新进程在主程序结束的时候替换文件，最简单的就是直接用 cmd 脚本实现
 
 ## 方案
+
 简单整理后，做了一个思维导图，考虑了客户端、服务端和开发端的热更新解决方案
 
 ![](img/hux.png)
 
 这种解决方案与官方方案的比较
 
-|Feature|Official|This|
-|-|-|-|
-|二进制最小更新（blockmap）|√||
-|不需要自己写代码|√||
-|可以更新主程序版本号|√||
-|追踪自定义依赖更新||√|
-|后端不需要存大量差异文件||√|
-|不需要在后端额外部署服务软件（可以与自己的服务端集成）||√
-|支持绿色版更新||√|
-|可以精简electron程序||√
+| Feature                                                | Official | This |
+| ------------------------------------------------------ | -------- | ---- |
+| 二进制最小更新（blockmap）                             | √        |      |
+| 不需要自己写代码                                       | √        |      |
+| 可以更新主程序版本号                                   | √        |      |
+| 追踪自定义依赖更新                                     |          | √    |
+| 后端不需要存大量差异文件                               |          | √    |
+| 不需要在后端额外部署服务软件（可以与自己的服务端集成） |          | √    |
+| 支持绿色版更新                                         |          | √    |
+| 可以精简 electron 程序                                 |          | √    |
 
 ## 代码
 
-### 服务端代码（使用Rust + actix-web框架）
+### 服务端代码（使用 Rust + actix-web 框架）
 
-> 这个代码比较简单就不放完整代码了，可以拿node.js + express.js自己鲁
+> 这个代码比较简单就不放完整代码了，可以拿 node.js + express.js 自己鲁
 
 ```
 #[cached(time = 600)]
@@ -93,18 +106,20 @@ fn get_hub_data()->Result<HubDataQueryStruct,String>{
 }
 ```
 
-请求返回Json：
+请求返回 Json：
 
 ![](img/233312.jpg)
 
-Json释义：
-* miniupdate_pack_addr：仅更新`./resource/app.asar`时更新包的地址
-* update_pack_addr：更新`./core/` `./resource/`两个文件夹时更新版的地址（`./resource/`目录包括了上面的`app.asar`）
-* full_update_redirect：当需要全量更新时会打开用户浏览器跳转到下载地址
-* update_info.dependencies_requirement：最后一次更新依赖的版本，如果当前版本低于此版本则需要下载`update_pack`
-* update_info.wide_gaps：鸿沟，当检测到跨越鸿沟升级（当前版本<鸿沟元素<=在线版本）时使用全量更新，会打开用户浏览器跳转到下载地址
+Json 释义：
+
+- miniupdate_pack_addr：仅更新`./resource/app.asar`时更新包的地址
+- update_pack_addr：更新`./core/` `./resource/`两个文件夹时更新版的地址（`./resource/`目录包括了上面的`app.asar`）
+- full_update_redirect：当需要全量更新时会打开用户浏览器跳转到下载地址
+- update_info.dependencies_requirement：最后一次更新依赖的版本，如果当前版本低于此版本则需要下载`update_pack`
+- update_info.wide_gaps：鸿沟，当检测到跨越鸿沟升级（当前版本<鸿沟元素<=在线版本）时使用全量更新，会打开用户浏览器跳转到下载地址
 
 ### 客户端代码
+
 ```
 //Index.vue
 
@@ -126,6 +141,7 @@ export default {
 ```
 
 > 热更新组件的代码，比较长，实现思路参考上面的思维导图
+
 ```
 //HotUpdate.vue
 
@@ -151,7 +167,7 @@ name: "HotUpdate",
   return{
     hotUpdateInfo:{
       needUpdate:false,//总开关
-      hubApiData:{"miniupdate_pack_addr":"https://pineapple.edgeless.top/disk/Socket/Hub/Update/miniupdate.7z","update_pack_addr":"https://pineapple.edgeless.top/disk/Socket/Hub/Update/update.7z","full_update_redirect":"https://down.edgeless.top","update_info":{"dependencies_requirement":"1.5","wide_gaps":["1.5"]}},
+      hubApiData:{"miniupdate_pack_addr":"https://cloud.edgeless.top/disk/Socket/Hub/Update/miniupdate.7z","update_pack_addr":"https://cloud.edgeless.top/disk/Socket/Hub/Update/update.7z","full_update_redirect":"https://down.edgeless.top","update_info":{"dependencies_requirement":"1.5","wide_gaps":["1.5"]}},
       updateMethod:"FULL_UPDATE",//FULL_UPDATE,HOT_UPDATE,MINI_UPDATE，分别对应手动全量更新、含依赖的增量更新和最小更新，最常用的是最小更新
     },
     interval:"",
@@ -163,7 +179,7 @@ name: "HotUpdate",
       if(!this.$electron.ipcRenderer.sendSync('isDev-request')){
         //如果没获取过在线版本号则发送请求
         if(this.$store.state.hub_online_version===""){
-          let online_version_res=await this.$axios.get("https://pineapple.edgeless.top/api/v2/info/hub_version")
+          let online_version_res=await this.$axios.get("https://cloud.edgeless.top/api/v2/info/hub_version")
           this.$store.commit('updateHubOnlineVersion',online_version_res.data)
         }
         //检查版本号
@@ -173,7 +189,7 @@ name: "HotUpdate",
           document.title='Edgeless Hub '+this.$store.state.hub_local_version+'  ('+this.$store.state.hub_online_version+'版本已可用)'
           //获取hub聚合信息
           if(this.$store.state.hub_api_data===""){
-            let res=await this.$axios.get("https://pineapple.edgeless.top/api/v2/info/hub")
+            let res=await this.$axios.get("https://cloud.edgeless.top/api/v2/info/hub")
             this.hotUpdateInfo.hubApiData=res.data
             this.$store.commit('updateHubApiData',res.data)
           }else{
@@ -296,8 +312,8 @@ ipcMain.on('updateOnExit',(event,payload)=>{
 })
 ```
 
+客户端的更新进程（cmd 脚本）
 
-客户端的更新进程（cmd脚本）
 ```
 @echo off
 title Edgeless Hub 热更新程序
@@ -325,7 +341,7 @@ echo Edgeless Hub 更新完成，程序将在3s后退出
 del /f /q "%0"
 ```
 
-开发端（cmd脚本，使用[JSON Stream Editor](https://github.com/tidwall/jj)读写.json文件）
+开发端（cmd 脚本，使用[JSON Stream Editor](https://github.com/tidwall/jj)读写.json 文件）
 
 ```
 ::main.cmd
@@ -472,7 +488,7 @@ del /f /q tmp
 del /f /q val
 ```
 
-> 注：可以在[Edgeless Hub的公开仓库](https://gitee.com/cnotech/edgeless-hub/tree/master/release)下载到`typex.exe`和`jj.exe`
+> 注：可以在[Edgeless Hub 的公开仓库](https://gitee.com/cnotech/edgeless-hub/tree/master/release)下载到`typex.exe`和`jj.exe`
 
 ```
 ::writeJson.cmd
@@ -511,6 +527,6 @@ put miniupdate.7z
 exit
 ```
 
-
 ## 效果
-最终的实现效果就是当有更新时在Edgeless Hub的首页上面会出现一个提示，点击更新按钮时，如果支持热更新则提示会消失，程序在后台下载更新包并解压，完成后弹出通知告知用户热更新将在程序关闭后开始；当electron退出时会运行更新程序完成更新。
+
+最终的实现效果就是当有更新时在 Edgeless Hub 的首页上面会出现一个提示，点击更新按钮时，如果支持热更新则提示会消失，程序在后台下载更新包并解压，完成后弹出通知告知用户热更新将在程序关闭后开始；当 electron 退出时会运行更新程序完成更新。
